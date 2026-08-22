@@ -295,7 +295,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#1A1025] w-screen h-screen flex flex-col overflow-hidden">
+    <div className="bg-[#1A1025] w-screen h-dvh flex flex-col overflow-hidden">
       {/* social icons */}
       <div className="flex justify-center gap-3 px-5 pt-3 text-white text-xl">
         <motion.a
