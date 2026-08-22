@@ -1,5 +1,5 @@
-import { motion, transform } from "framer-motion";
-import { evaluate, size } from "mathjs";
+import { motion } from "framer-motion";
+import { evaluate } from "mathjs";
 import { useEffect, useRef, useState } from "react";
 
 export default function App() {
