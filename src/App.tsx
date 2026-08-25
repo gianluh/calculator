@@ -295,49 +295,109 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[#1A1025] w-screen h-dvh flex flex-col overflow-hidden">
-      {/* social icons */}
-      <div className="flex justify-center gap-3 px-5 pt-3 text-white text-xl">
-        <motion.a
-          className="fa-solid fa-envelope bg-[#3D2A5C] p-5 rounded-full text-2xl"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=gianlucademaiobiz@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileTap={{ scale: 1.15 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        ></motion.a>
-        <motion.a
-          className="fa-brands fa-linkedin bg-[#3D2A5C] p-5 rounded-full text-2xl"
-          whileTap={{ scale: 1.15 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          href="https://www.linkedin.com/in/gianluca-de-maio-aa7b75429"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></motion.a>
-        <motion.a
-          className="fa-brands fa-github bg-[#3D2A5C] p-5 rounded-full text-2xl"
-          whileTap={{ scale: 1.15 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-          href="https://github.com/gianluh"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></motion.a>
+  <div className="bg-[#1A1025] w-full min-h-dvh flex flex-col overflow-hidden">
+    {/* Social icons */}
+    <div className="flex justify-center gap-2 sm:gap-3 px-4 pt-3 text-white">
+      <motion.a
+        className="fa-solid fa-envelope bg-[#3D2A5C] 
+        p-3 sm:p-4 md:p-5 
+        rounded-full 
+        text-lg sm:text-xl md:text-2xl"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=gianlucademaiobiz@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileTap={{ scale: 1.15 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        aria-label="Email"
+      />
+
+      <motion.a
+        className="fa-brands fa-linkedin bg-[#3D2A5C] 
+        p-3 sm:p-4 md:p-5 
+        rounded-full 
+        text-lg sm:text-xl md:text-2xl"
+        href="https://www.linkedin.com/in/gianluca-de-maio-aa7b75429"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileTap={{ scale: 1.15 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        aria-label="LinkedIn"
+      />
+
+      <motion.a
+        className="fa-brands fa-github bg-[#3D2A5C] 
+        p-3 sm:p-4 md:p-5 
+        rounded-full 
+        text-lg sm:text-xl md:text-2xl"
+        href="https://github.com/gianluh"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileTap={{ scale: 1.15 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        aria-label="GitHub"
+      />
+    </div>
+
+    {/* Calculator */}
+    <div
+      className="
+        flex-1 
+        flex flex-col 
+        justify-end 
+        items-center
+        w-full
+        px-3 sm:px-5
+        pb-3 sm:pb-5
+        min-h-0
+      "
+    >
+      <div
+        className="
+          bg-[#2D1B4E]
+          w-full
+          max-w-[500px]
+          h-[clamp(80px,12vh,120px)]
+          rounded-2xl sm:rounded-3xl
+          flex
+          justify-end
+          items-center
+          text-white
+          font-bold
+          jbmono
+          overflow-hidden
+          px-3 sm:px-4
+          mb-3 sm:mb-4
+        "
+      >
+        <span
+          ref={spanRef}
+          className="
+            overflow-x-auto
+            no-scrollbar
+            whitespace-nowrap
+            text-[clamp(2rem,8vw,3rem)]
+          "
+        >
+          {display}
+        </span>
       </div>
 
-      {/* calculator */}
-      <div className="flex flex-col flex-1 min-h-0 justify-end items-center mx-5 mb-5 min-w-0">
-        <div className="bg-[#2D1B4E] w-full h-1/7 rounded-3xl flex justify-end items-center text-white text-5xl font-bold jbmono overflow-hidden pr-4 pl-4 mb-4 min-w-0">
-          <span
-            ref={spanRef}
-            className="overflow-x-auto no-scrollbar whitespace-nowrap"
-          >
-            {display}
-          </span>
-        </div>
-        <div className="grid grid-cols-4 text-white gap-3 w-full text-4xl jbmono font-semibold">
-          {renderButton()}
-        </div>
+      <div
+        className="
+          grid
+          grid-cols-4
+          gap-2 sm:gap-3
+          w-full
+          max-w-[500px]
+          text-[clamp(1.5rem,7vw,2.25rem)]
+          jbmono
+          font-semibold
+          text-white
+        "
+      >
+        {renderButton()}
       </div>
     </div>
-  );
+  </div>
+);
 }
